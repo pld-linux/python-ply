@@ -3,7 +3,7 @@
 %define		module	ply
 
 Summary:	Python Lex-Yacc
-Summary(pl):	Python IRC library
+Summary(pl):	lex i yacc dla Pythona
 Name:		python-%{module}
 Version:	1.3.1
 Release:	2
@@ -30,7 +30,6 @@ several reasons why you might want to take a look at PLY:
   support for ambiguous grammars.
 - PLY is extremely easy to use and provides very extensive error
   checking.
-
 
 %description -l pl
 PLY to kolejna implementacja lex i yacc dla Pythona. Mimo i¿ istnieje
