@@ -10,6 +10,7 @@ Release:	1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://systems.cs.uchicago.edu/ply/ply-%{version}.tar.gz
+# Source0-md5:	a4b9d94a69776d2fd37788b98ca8c3c9
 URL:		http://systems.cs.uchicago.edu/ply/
 BuildRequires:	rpm-pythonprov >= 4.0.2-50
 BuildRequires:	python >= 2.2.1
