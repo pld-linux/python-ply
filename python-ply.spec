@@ -6,7 +6,7 @@ Summary:	Python Lex-Yacc
 Summary(pl):	Python IRC library
 Name:		python-%{module}
 Version:	1.3.1
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://systems.cs.uchicago.edu/ply/ply-%{version}.tar.gz
@@ -49,12 +49,13 @@ powodów dla których powiniene¶ zainteresowaæ siê PLY:
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{py_sitedir}
+install -d $RPM_BUILD_ROOT%{py_sitescriptdir}
 
-install *.py $RPM_BUILD_ROOT%{py_sitedir}
+install *.py $RPM_BUILD_ROOT%{py_sitescriptdir}
 
-%py_comp $RPM_BUILD_ROOT%{py_sitedir}
-%py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
+%py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
+%py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
+rm $RPM_BUILD_ROOT%{py_sitescriptdir}/*.py
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -62,4 +63,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGES README TODO doc/*.html
-%{py_sitedir}/*.py[co]
+%{py_sitescriptdir}/*.py[co]
