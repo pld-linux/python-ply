@@ -4,12 +4,12 @@
 Summary:	Python Lex-Yacc
 Summary(pl):	lex i yacc dla Pythona
 Name:		python-%{module}
-Version:	1.4
+Version:	1.5
 Release:	1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://systems.cs.uchicago.edu/ply/ply-%{version}.tar.gz
-# Source0-md5:	2171a9d00afe7db6a0e42a741e780a9e
+# Source0-md5:	88549f0d9cf7ff6c62123e1f05a4f0d2
 URL:		http://systems.cs.uchicago.edu/ply/
 BuildRequires:	rpm-pythonprov >= 4.0.2-50
 BuildRequires:	python >= 2.2.1
