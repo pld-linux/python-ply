@@ -11,7 +11,6 @@ Group:		Libraries/Python
 Source0:	http://systems.cs.uchicago.edu/ply/ply-%{version}.tar.gz
 # Source0-md5:	88549f0d9cf7ff6c62123e1f05a4f0d2
 URL:		http://systems.cs.uchicago.edu/ply/
-BuildRequires:	rpm-pythonprov >= 4.0.2-50
 BuildRequires:	python >= 2.2.1
 %pyrequires_eq	python
 BuildArch:	noarch
