@@ -5,12 +5,12 @@
 Summary:	Python Lex-Yacc
 Summary(pl):	Python IRC library
 Name:		python-%{module}
-Version:	1.1
+Version:	1.3.1
 Release:	1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://systems.cs.uchicago.edu/ply/ply-%{version}.tar.gz
-# Source0-md5:	a4b9d94a69776d2fd37788b98ca8c3c9
+# Source0-md5:	eeb11347ef861d3ec9469f072beeaeb1
 URL:		http://systems.cs.uchicago.edu/ply/
 BuildRequires:	rpm-pythonprov >= 4.0.2-50
 BuildRequires:	python >= 2.2.1
@@ -61,5 +61,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ANNOUNCE CHANGES README TODO doc/*.html
+%doc CHANGES README TODO doc/*.html
 %{py_sitedir}/*.py[co]
