@@ -5,7 +5,7 @@ Summary:	Python Lex-Yacc
 Summary(pl):	lex i yacc dla Pythona
 Name:		python-%{module}
 Version:	1.5
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://systems.cs.uchicago.edu/ply/ply-%{version}.tar.gz
