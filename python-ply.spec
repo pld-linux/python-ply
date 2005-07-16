@@ -38,7 +38,7 @@ powodów dla których powiniene¶ zainteresowaæ siê PLY:
 - PLY dostarcza wiêkszo¶æ mo¿liwo¶ci standardowego lex/yacc w³±czaj±c
   w to wsparcie dla pustych produkcji, regu³ poprzedzania,
   rekompensowania b³êdów oraz wsparcia dla dwuznacznych gramatyk.
-- PLY jest niezwykle ³±twy w u¿yciu oraz dostarcza szerokiej kontroli
+- PLY jest niezwykle ³atwy w u¿yciu oraz dostarcza szerokiej kontroli
   b³êdów.
 
 %prep
