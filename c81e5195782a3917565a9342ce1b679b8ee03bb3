@@ -1,0 +1,8 @@
+- up to 1.6
+- added -setup.patch: updated addresses, version
+- added examples, created subpackage
+- use setup.py (instead packaging it)
+- rel. 0.1 - I have reservations how `lex.py' works (I've
+  also tested older ver. - 1.5 - the same): I wrote similar
+  programs for flex(1) and for ply lex.py and I've gotten
+  expected results from flex(1) whereas from lex.py not.
