@@ -4,13 +4,14 @@
 Summary:	Python Lex-Yacc
 Summary(pl):	lex i yacc dla Pythona
 Name:		python-%{module}
-Version:	1.5
-Release:	2
+Version:	1.6
+Release:	0.1
 License:	LGPL
 Group:		Libraries/Python
-Source0:	http://systems.cs.uchicago.edu/ply/ply-%{version}.tar.gz
-# Source0-md5:	88549f0d9cf7ff6c62123e1f05a4f0d2
-URL:		http://systems.cs.uchicago.edu/ply/
+Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
+# Source0-md5:	cc43cab69b072fdd5c2557f3865c383d
+Patch0:		%{name}-setup.patch
+URL:		http://www.dabeaz.com/ply/
 BuildRequires:	python >= 2.2.1
 %pyrequires_eq	python
 BuildArch:	noarch
@@ -41,18 +42,30 @@ powodów dla których powiniene¶ zainteresowaæ siê PLY:
 - PLY jest niezwykle ³atwy w u¿yciu oraz dostarcza szerokiej kontroli
   b³êdów.
 
+%package examples
+Summary:	Python Lex-Yacc - examples
+Summary(pl):	lex i yacc dla Pythona - przyk³ady
+Group:		Development/Languages/Python	
+
+%description examples
+Python Lex-Yacc - examples.
+
+%description examples -l pl
+lex i yacc dla Pythona - przyk³ady.
+
 %prep
 %setup -q -n %{module}-%{version}
+%patch0 -p0
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{py_sitescriptdir}
 
-install *.py $RPM_BUILD_ROOT%{py_sitescriptdir}
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-%py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
-%py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
-rm $RPM_BUILD_ROOT%{py_sitescriptdir}/*.py
+%__python setup.py install --root $RPM_BUILD_ROOT --optimize 1
+%py_postclean
+
+cp -Rf example/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -61,3 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGES README TODO doc/*.html
 %{py_sitescriptdir}/*.py[co]
+
+%files examples
+%defattr(644,root,root,755)
+%{_examplesdir}/%{name}-%{version}
