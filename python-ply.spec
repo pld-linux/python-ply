@@ -14,9 +14,9 @@ Patch0:		%{name}-setup.patch
 URL:		http://www.dabeaz.com/ply/
 BuildRequires:	python >= 2.2.1
 %pyrequires_eq	python
+Obsoletes:	%{module}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes:	%{module}
 
 %description
 PLY is yet another implementation of lex and yacc for Python. Although
@@ -45,7 +45,7 @@ powodów dla których powiniene¶ zainteresowaæ siê PLY:
 %package examples
 Summary:	Python Lex-Yacc - examples
 Summary(pl):	lex i yacc dla Pythona - przyk³ady
-Group:		Development/Languages/Python	
+Group:		Development/Languages/Python
 
 %description examples
 Python Lex-Yacc - examples.
