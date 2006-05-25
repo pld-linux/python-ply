@@ -4,13 +4,12 @@
 Summary:	Python Lex-Yacc
 Summary(pl):	lex i yacc dla Pythona
 Name:		python-%{module}
-Version:	1.6
-Release:	0.1
+Version:	1.7
+Release:	0.2
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
-# Source0-md5:	cc43cab69b072fdd5c2557f3865c383d
-Patch0:		%{name}-setup.patch
+# Source0-md5:	95e1cc90132f7e9b7fe0877c922dd0b2
 URL:		http://www.dabeaz.com/ply/
 BuildRequires:	python >= 2.2.1
 %pyrequires_eq	python
@@ -55,7 +54,6 @@ lex i yacc dla Pythona - przyk³ady.
 
 %prep
 %setup -q -n %{module}-%{version}
-%patch0 -p0
 
 %install
 rm -rf $RPM_BUILD_ROOT
