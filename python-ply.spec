@@ -2,7 +2,7 @@
 %define		module	ply
 
 Summary:	Python Lex-Yacc
-Summary(pl):	lex i yacc dla Pythona
+Summary(pl.UTF-8):   lex i yacc dla Pythona
 Name:		python-%{module}
 Version:	1.7
 Release:	0.2
@@ -29,28 +29,28 @@ several reasons why you might want to take a look at PLY:
 - PLY is extremely easy to use and provides very extensive error
   checking.
 
-%description -l pl
-PLY to kolejna implementacja lex i yacc dla Pythona. Mimo i¿ istnieje
-kilka innych narzêdzi parsuj±cych dla Pythona to istnieje kilka
-powodów dla których powiniene¶ zainteresowaæ siê PLY:
-- U¿ywa parsowania-LR, które jest racjonalnie wydajne i do¶æ dobre dla
-  wiêkszych gramatyk.
-- PLY dostarcza wiêkszo¶æ mo¿liwo¶ci standardowego lex/yacc w³±czaj±c
-  w to wsparcie dla pustych produkcji, regu³ poprzedzania,
-  rekompensowania b³êdów oraz wsparcia dla dwuznacznych gramatyk.
-- PLY jest niezwykle ³atwy w u¿yciu oraz dostarcza szerokiej kontroli
-  b³êdów.
+%description -l pl.UTF-8
+PLY to kolejna implementacja lex i yacc dla Pythona. Mimo iÅ¼ istnieje
+kilka innych narzÄ™dzi parsujÄ…cych dla Pythona to istnieje kilka
+powodÃ³w dla ktÃ³rych powinieneÅ› zainteresowaÄ‡ siÄ™ PLY:
+- UÅ¼ywa parsowania-LR, ktÃ³re jest racjonalnie wydajne i doÅ›Ä‡ dobre dla
+  wiÄ™kszych gramatyk.
+- PLY dostarcza wiÄ™kszoÅ›Ä‡ moÅ¼liwoÅ›ci standardowego lex/yacc wÅ‚Ä…czajÄ…c
+  w to wsparcie dla pustych produkcji, reguÅ‚ poprzedzania,
+  rekompensowania bÅ‚Ä™dÃ³w oraz wsparcia dla dwuznacznych gramatyk.
+- PLY jest niezwykle Å‚atwy w uÅ¼yciu oraz dostarcza szerokiej kontroli
+  bÅ‚Ä™dÃ³w.
 
 %package examples
 Summary:	Python Lex-Yacc - examples
-Summary(pl):	lex i yacc dla Pythona - przyk³ady
+Summary(pl.UTF-8):   lex i yacc dla Pythona - przykÅ‚ady
 Group:		Development/Languages/Python
 
 %description examples
 Python Lex-Yacc - examples.
 
-%description examples -l pl
-lex i yacc dla Pythona - przyk³ady.
+%description examples -l pl.UTF-8
+lex i yacc dla Pythona - przykÅ‚ady.
 
 %prep
 %setup -q -n %{module}-%{version}
