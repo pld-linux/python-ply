@@ -2,7 +2,7 @@
 %define		module	ply
 
 Summary:	Python Lex-Yacc
-Summary(pl.UTF-8):   lex i yacc dla Pythona
+Summary(pl.UTF-8):	lex i yacc dla Pythona
 Name:		python-%{module}
 Version:	1.7
 Release:	0.2
@@ -43,7 +43,7 @@ powodów dla których powinieneś zainteresować się PLY:
 
 %package examples
 Summary:	Python Lex-Yacc - examples
-Summary(pl.UTF-8):   lex i yacc dla Pythona - przykłady
+Summary(pl.UTF-8):	lex i yacc dla Pythona - przykłady
 Group:		Development/Languages/Python
 
 %description examples
