@@ -4,12 +4,12 @@
 Summary:	Python Lex-Yacc
 Summary(pl.UTF-8):	lex i yacc dla Pythona
 Name:		python-%{module}
-Version:	1.7
-Release:	0.2
+Version:	3.1
+Release:	0.1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
-# Source0-md5:	95e1cc90132f7e9b7fe0877c922dd0b2
+# Source0-md5:	20f5b0965ee9f644ee8db88224db4540
 URL:		http://www.dabeaz.com/ply/
 BuildRequires:	python >= 2.2.1
 %pyrequires_eq	python
@@ -60,18 +60,22 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-%__python setup.py install --root $RPM_BUILD_ROOT --optimize 1
+%{__python} setup.py install --root $RPM_BUILD_ROOT --optimize 1
 %py_postclean
 
 cp -Rf example/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
+# we already have these files in %doc
+rm -fr $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}-%{version}-*.egg-info
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES README TODO doc/*.html
-%{py_sitescriptdir}/*.py[co]
+%doc CHANGES README TODO doc/*.html ply.egg-info/* 
+%dir %{py_sitescriptdir}/ply
+%{py_sitescriptdir}/ply/*.py[co]
 
 %files examples
 %defattr(644,root,root,755)
