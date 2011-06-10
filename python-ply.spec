@@ -4,12 +4,12 @@
 Summary:	Python Lex-Yacc
 Summary(pl.UTF-8):	lex i yacc dla Pythona
 Name:		python-%{module}
-Version:	3.2
+Version:	3.4
 Release:	0.1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
-# Source0-md5:	afc9dcfc3284e3a8269c97cc4802cb53
+# Source0-md5:	ffdc95858819347bf92d7c2acc074894
 URL:		http://www.dabeaz.com/ply/
 BuildRequires:	python >= 2.2.1
 %pyrequires_eq	python
