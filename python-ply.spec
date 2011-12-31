@@ -5,7 +5,7 @@ Summary:	Python Lex-Yacc
 Summary(pl.UTF-8):	lex i yacc dla Pythona
 Name:		python-%{module}
 Version:	3.4
-Release:	0.1
+Release:	1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
@@ -60,7 +60,9 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-%{__python} setup.py install --root $RPM_BUILD_ROOT --optimize 1
+%{__python} setup.py install \
+	 --root $RPM_BUILD_ROOT \
+	 --optimize=2
 %py_postclean
 
 cp -Rf example/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
@@ -73,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES README TODO doc/*.html ply.egg-info/* 
+%doc CHANGES README TODO doc/*.html ply.egg-info/*
 %dir %{py_sitescriptdir}/ply
 %{py_sitescriptdir}/ply/*.py[co]
 
