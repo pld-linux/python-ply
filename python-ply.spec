@@ -5,8 +5,8 @@ Summary:	Python Lex-Yacc
 Summary(pl.UTF-8):	lex i yacc dla Pythona
 Name:		python-%{module}
 Version:	3.4
-Release:	1
-License:	LGPL
+Release:	2
+License:	BSD
 Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
 # Source0-md5:	ffdc95858819347bf92d7c2acc074894
@@ -30,15 +30,15 @@ several reasons why you might want to take a look at PLY:
   checking.
 
 %description -l pl.UTF-8
-PLY to kolejna implementacja lex i yacc dla Pythona. Mimo iż istnieje
-kilka innych narzędzi parsujących dla Pythona to istnieje kilka
-powodów dla których powinieneś zainteresować się PLY:
-- Używa parsowania-LR, które jest racjonalnie wydajne i dość dobre dla
+PLY to kolejna implementacja narzędzi lex i yacc dla Pythona. Mimo iż
+istnieje kilka innych analizatorów dla Pythona, to istnieje kilka
+powodów, dla których można zainteresować się PLY:
+- Używa on analizy LR, która jest w miarę wydajna i dość dobra dla
   większych gramatyk.
-- PLY dostarcza większość możliwości standardowego lex/yacc włączając
-  w to wsparcie dla pustych produkcji, reguł poprzedzania,
-  rekompensowania błędów oraz wsparcia dla dwuznacznych gramatyk.
-- PLY jest niezwykle łatwy w użyciu oraz dostarcza szerokiej kontroli
+- Udostępnia większość możliwości standardowych lex/yacc, w tym
+  obsługę pustych produkcji, reguł poprzedzania, rekompensowania
+  błędów oraz obsługę niejednoznacznych gramatyk.
+- Jest niezwykle łatwy w użyciu oraz zapewnia rozległą kontrolę
   błędów.
 
 %package examples
@@ -57,7 +57,6 @@ lex i yacc dla Pythona - przykłady.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__python} setup.py install \
@@ -67,17 +66,17 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 cp -Rf example/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-# we already have these files in %doc
-rm -fr $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}-%{version}-*.egg-info
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES README TODO doc/*.html ply.egg-info/*
+%doc ANNOUNCE CHANGES README TODO doc/*.html
 %dir %{py_sitescriptdir}/ply
 %{py_sitescriptdir}/ply/*.py[co]
+%if "%{py_ver}" >= "2.5"
+%{py_sitescriptdir}/ply-%{version}-py*.egg-info
+%endif
 
 %files examples
 %defattr(644,root,root,755)
