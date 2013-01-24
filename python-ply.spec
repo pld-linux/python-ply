@@ -1,11 +1,9 @@
-
 %define		module	ply
-
 Summary:	Python Lex-Yacc
 Summary(pl.UTF-8):	lex i yacc dla Pythona
 Name:		python-%{module}
 Version:	3.4
-Release:	2
+Release:	3
 License:	BSD
 Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
@@ -36,8 +34,8 @@ powodów, dla których można zainteresować się PLY:
 - Używa on analizy LR, która jest w miarę wydajna i dość dobra dla
   większych gramatyk.
 - Udostępnia większość możliwości standardowych lex/yacc, w tym
-  obsługę pustych produkcji, reguł poprzedzania, rekompensowania
-  błędów oraz obsługę niejednoznacznych gramatyk.
+  obsługę pustych produkcji, reguł poprzedzania, rekompensowania błędów
+  oraz obsługę niejednoznacznych gramatyk.
 - Jest niezwykle łatwy w użyciu oraz zapewnia rozległą kontrolę
   błędów.
 
