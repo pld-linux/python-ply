@@ -3,7 +3,7 @@ Summary:	Python Lex-Yacc
 Summary(pl.UTF-8):	lex i yacc dla Pythona
 Name:		python-%{module}
 Version:	3.4
-Release:	3
+Release:	4
 License:	BSD
 Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
