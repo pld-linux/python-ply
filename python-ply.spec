@@ -9,6 +9,7 @@ Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
 # Source0-md5:	ffdc95858819347bf92d7c2acc074894
 URL:		http://www.dabeaz.com/ply/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python >= 2.2.1
 %pyrequires_eq	python
 Obsoletes:	%{module}
