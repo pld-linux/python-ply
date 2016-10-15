@@ -1,28 +1,29 @@
+#
 # Conditional build:
 %bcond_without  tests   # do not perform "make test"
 %bcond_without  python2 # CPython 2.x module
 %bcond_without  python3 # CPython 3.x module
 #
 %define		module	ply
-Summary:	Python Lex-Yacc
-Summary(pl.UTF-8):	lex i yacc dla Pythona
+Summary:	Python 2 Lex-Yacc
+Summary(pl.UTF-8):	lex i yacc dla Pythona 2
 Name:		python-%{module}
-Version:	3.8
+Version:	3.9
 Release:	1
 License:	BSD
 Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
-# Source0-md5:	94726411496c52c87c2b9429b12d5c50
+# Source0-md5:	c5c5767376eff902617fd9874f0c76b7
 URL:		http://www.dabeaz.com/ply/
-BuildRequires:	rpmbuild(macros) >= 1.710
+BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python3}
 BuildRequires:	python >= 2.2.1
-Requires:	python
 %endif
 %if %{with python3}
-BuildRequires:	python3
+BuildRequires:	python3 >= 1:3.2
 %endif
-Obsoletes:	%{module}
+Requires:	python-modules
+Obsoletes:	ply
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -51,10 +52,10 @@ powodów, dla których można zainteresować się PLY:
   błędów.
 
 %package -n python3-%{module}
-Summary:	Python Lex-Yacc
-Summary(pl.UTF-8):	lex i yacc dla Pythona
+Summary:	Python 3 Lex-Yacc
+Summary(pl.UTF-8):	lex i yacc dla Pythona 3
 Group:		Libraries/Python
-Requires:	python3-modules
+Requires:	python3-modules >= 1:3.2
 
 %description -n python3-%{module}
 PLY is yet another implementation of lex and yacc for Python. Although
@@ -138,12 +139,10 @@ rm -rf $RPM_BUILD_ROOT
 %files -n python3-%{module}
 %defattr(644,root,root,755)
 %doc ANNOUNCE CHANGES README.md TODO doc/*.html
-%{py3_sitescriptdir}/%{module}
-%{py3_sitescriptdir}/%{module}-%{version}-py*.egg-info
+%{py3_sitescriptdir}/ply
+%{py3_sitescriptdir}/ply-%{version}-py*.egg-info
 %endif
 
 %files examples
 %defattr(644,root,root,755)
 %{_examplesdir}/%{name}-%{version}
-
-
