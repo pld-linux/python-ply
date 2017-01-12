@@ -18,9 +18,15 @@ URL:		http://www.dabeaz.com/ply/
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python3}
 BuildRequires:	python >= 2.2.1
+%if %{with tests}
+BuildRequires:	python-setuptools
+%endif
 %endif
 %if %{with python3}
 BuildRequires:	python3 >= 1:3.2
+%if %{with tests}
+BuildRequires:	python3-setuptools
+%endif
 %endif
 Requires:	python-modules
 Obsoletes:	ply
