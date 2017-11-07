@@ -8,12 +8,12 @@
 Summary:	Python 2 Lex-Yacc
 Summary(pl.UTF-8):	lex i yacc dla Pythona 2
 Name:		python-%{module}
-Version:	3.9
-Release:	2
+Version:	3.10
+Release:	1
 License:	BSD
 Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
-# Source0-md5:	c5c5767376eff902617fd9874f0c76b7
+# Source0-md5:	1d63c166ab250bab87d8dcc42dcca70e
 URL:		http://www.dabeaz.com/ply/
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python3}
