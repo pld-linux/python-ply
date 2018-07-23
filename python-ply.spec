@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without  tests   # do not perform "make test"
+%bcond_without  tests   # unit/functional tests
 %bcond_without  python2 # CPython 2.x module
 %bcond_without  python3 # CPython 3.x module
 #
@@ -8,16 +8,16 @@
 Summary:	Python 2 Lex-Yacc
 Summary(pl.UTF-8):	lex i yacc dla Pythona 2
 Name:		python-%{module}
-Version:	3.10
-Release:	2
+Version:	3.11
+Release:	1
 License:	BSD
 Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
-# Source0-md5:	1d63c166ab250bab87d8dcc42dcca70e
+# Source0-md5:	6465f602e656455affcd7c5734c638f8
 URL:		http://www.dabeaz.com/ply/
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python3}
-BuildRequires:	python >= 2.2.1
+BuildRequires:	python >= 1:2.7
 %if %{with tests}
 BuildRequires:	python-setuptools
 %endif
@@ -28,7 +28,7 @@ BuildRequires:	python3 >= 1:3.2
 BuildRequires:	python3-setuptools
 %endif
 %endif
-Requires:	python-modules
+Requires:	python-modules >= 1:2.7
 Obsoletes:	ply
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -136,9 +136,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc ANNOUNCE CHANGES README.md TODO doc/*.html
 %dir %{py_sitescriptdir}/ply
 %{py_sitescriptdir}/ply/*.py[co]
-%if "%{py_ver}" >= "2.5"
 %{py_sitescriptdir}/ply-%{version}-py*.egg-info
-%endif
 %endif
 
 %if %{with python3}
