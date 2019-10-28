@@ -9,7 +9,7 @@ Summary:	Python 2 Lex-Yacc
 Summary(pl.UTF-8):	lex i yacc dla Pythona 2
 Name:		python-%{module}
 Version:	3.11
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
