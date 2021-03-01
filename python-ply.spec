@@ -10,7 +10,7 @@ Summary(pl.UTF-8):	lex i yacc dla Pythona 2
 Name:		python-%{module}
 # note: keep 3.x here for python2 support; for 4+ create python3- .spec instead
 Version:	3.11
-Release:	2
+Release:	3
 License:	BSD
 Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
@@ -101,6 +101,9 @@ lex i yacc dla Pythona - przykłady.
 
 %prep
 %setup -q -n %{module}-%{version}
+
+%{__sed} -i -e '1s,/usr/bin/env python,%{__python},' \
+	example/{,new}classcalc/calc.py
 
 %build
 %if %{with python2}
