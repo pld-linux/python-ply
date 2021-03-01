@@ -102,6 +102,7 @@ lex i yacc dla Pythona - przykłady.
 %prep
 %setup -q -n %{module}-%{version}
 
+%build
 %if %{with python2}
 %py_build %{?with_tests:test}
 %endif
