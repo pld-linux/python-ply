@@ -10,7 +10,7 @@ Summary(pl.UTF-8):	lex i yacc dla Pythona 2
 Name:		python-%{module}
 # note: keep 3.x here for python2 support; for 4+ create python3- .spec instead
 Version:	3.11
-Release:	5
+Release:	6
 License:	BSD
 Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
