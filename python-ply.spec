@@ -30,7 +30,6 @@ BuildRequires:	python3-setuptools
 %endif
 %endif
 Requires:	python-modules >= 1:2.7
-Obsoletes:	ply
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -107,11 +106,31 @@ lex i yacc dla Pythona - przykłady.
 
 %build
 %if %{with python2}
-%py_build %{?with_tests:test}
+%py_build
+
+%if %{with tests}
+cd test
+for t in testlex.py testyacc.py testcpp.py ; do
+PYTHONPATH=$(pwd)/.. \
+%{__python} "$t"
+done
+./cleanup.sh
+cd ..
+%endif
 %endif
 
 %if %{with python3}
-%py3_build %{?with_tests:test}
+%py3_build
+
+%if %{with tests}
+cd test
+for t in testlex.py testyacc.py testcpp.py ; do
+PYTHONPATH=$(pwd)/.. \
+%{__python3} "$t"
+done
+./cleanup.sh
+cd ..
+%endif
 %endif
 
 %install
@@ -120,8 +139,6 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %if %{with python2}
 %py_install
-%py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
-%py_comp $RPM_BUILD_ROOT%{py_sitedir}
 
 %py_postclean
 %endif
