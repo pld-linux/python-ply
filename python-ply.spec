@@ -17,7 +17,7 @@ Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
 # Source0-md5:	6465f602e656455affcd7c5734c638f8
 URL:		http://www.dabeaz.com/ply/
 BuildRequires:	rpmbuild(macros) >= 1.714
-%if %{with python3}
+%if %{with python2}
 BuildRequires:	python >= 1:2.7
 %if %{with tests}
 BuildRequires:	python-setuptools
