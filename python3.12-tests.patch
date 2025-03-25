@@ -1,0 +1,40 @@
+--- ply-3.11/test/testyacc.py.orig	2018-02-15 19:44:15.000000000 +0100
++++ ply-3.11/test/testyacc.py	2025-03-25 00:14:17.453624163 +0100
+@@ -90,6 +90,8 @@
+         if sys.hexversion >= 0x3020000:
+             warnings.filterwarnings('ignore', category=ResourceWarning)
+         warnings.filterwarnings('ignore', category=DeprecationWarning)
++        if sys.hexversion >= 0x30c0000:
++            setattr(YaccErrorWarningTests, 'assert_', unittest.TestCase.assertTrue)
+ 
+     def tearDown(self):
+         sys.stderr = sys.__stderr__
+--- ply-3.11/test/testlex.py.orig	2018-02-15 19:44:15.000000000 +0100
++++ ply-3.11/test/testlex.py	2025-03-25 01:32:04.567205158 +0100
+@@ -90,6 +90,8 @@
+         sys.stdout = StringIO.StringIO()
+         if sys.hexversion >= 0x3020000:
+             warnings.filterwarnings('ignore',category=ResourceWarning)
++        if sys.hexversion >= 0x30c0000:
++            setattr(LexErrorWarningTests, 'assert_', unittest.TestCase.assertTrue)
+ 
+     def tearDown(self):
+         sys.stderr = sys.__stderr__
+@@ -329,6 +331,8 @@
+     def setUp(self):
+         sys.stderr = StringIO.StringIO()
+         sys.stdout = StringIO.StringIO()
++        if sys.hexversion >= 0x30c0000:
++            setattr(LexBuildOptionTests, 'assert_', unittest.TestCase.assertTrue)
+     def tearDown(self):
+         sys.stderr = sys.__stderr__
+         sys.stdout = sys.__stdout__
+@@ -650,6 +654,8 @@
+     def setUp(self):
+         sys.stderr = StringIO.StringIO()
+         sys.stdout = StringIO.StringIO()
++        if sys.hexversion >= 0x30c0000:
++            setattr(LexRunTests, 'assert_', unittest.TestCase.assertTrue)
+     def tearDown(self):
+         sys.stderr = sys.__stderr__
+         sys.stdout = sys.__stdout__

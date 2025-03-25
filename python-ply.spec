@@ -10,23 +10,26 @@ Summary(pl.UTF-8):	lex i yacc dla Pythona 2
 Name:		python-%{module}
 # note: keep 3.x here for python2 support; for 4+ create python3- .spec instead
 Version:	3.11
-Release:	9
+Release:	10
 License:	BSD
 Group:		Libraries/Python
 Source0:	http://www.dabeaz.com/ply/ply-%{version}.tar.gz
 # Source0-md5:	6465f602e656455affcd7c5734c638f8
+Patch0:		python3.12-tests.patch
 URL:		http://www.dabeaz.com/ply/
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
 BuildRequires:	python >= 1:2.7
 %if %{with tests}
 BuildRequires:	python-setuptools
+BuildRequires:	python-six
 %endif
 %endif
 %if %{with python3}
 BuildRequires:	python3 >= 1:3.2
 %if %{with tests}
 BuildRequires:	python3-setuptools
+BuildRequires:	python3-six
 %endif
 %endif
 Requires:	python-modules >= 1:2.7
@@ -100,6 +103,7 @@ lex i yacc dla Pythona - przykłady.
 
 %prep
 %setup -q -n %{module}-%{version}
+%patch -P0 -p1
 
 %{__sed} -i -e '1s,/usr/bin/env python,%{__python},' \
 	example/{,new}classcalc/calc.py
